@@ -1,6 +1,11 @@
-def prime?(num)
-  (2..(num-1)).each do |x|
-    return false if num % x == 0
+def prime?(number)
+  start = 2
+  if number > 1
+    range = (start..number-1).to_a
+    range.none? do |num_to_test|
+      number % num_to_test == 0
+    end
+  else
+    false
   end
-  true
 end
